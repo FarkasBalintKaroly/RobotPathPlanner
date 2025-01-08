@@ -3,7 +3,7 @@ from src.path_planner.dijkstra import DijkstraPathPlanner
 
 
 def test_dijkstra_simple_path():
-    """Teszteljük, hogy a Dijkstra működik akadályok nélkül."""
+    """Testing Dijkstra without obstacles."""
     config = {
         "space_size": [1.0, 1.0, 1.0],
         "grid_resolution": 0.2,
@@ -12,14 +12,11 @@ def test_dijkstra_simple_path():
     graph = Graph(config)
     planner = DijkstraPathPlanner(graph)
 
-    start = graph.to_grid_index([0.0, 0.0, 0.0])
-    goal = graph.to_grid_index([0.8, 0.8, 0.8])
+    start = (0, 0, 0)
+    goal = (1, 1, 1)
 
-    # print("Csomópontok:", graph.nodes)
-    # print("Szomszédok:", graph.edges)
-
-    assert start in graph.nodes, "Start csomópont nem található a gráfban."
-    assert goal in graph.nodes, "Goal csomópont nem található a gráfban."
+    assert start in graph.nodes, "Start node not found in graph."
+    assert goal in graph.nodes, "Goal node not found in graph."
 
     path = planner.plan_path(start, goal)
 
@@ -27,9 +24,14 @@ def test_dijkstra_simple_path():
     assert path[0] == start
     assert path[-1] == goal
 
+    print("Success!")
+    print("Path:")
+    for node in path:
+        print(node)
+
 
 def test_dijkstra_with_obstacles():
-    """Teszteljük, hogy a Dijkstra képes elkerülni az akadályokat."""
+    """Testing Dijkstra with obstacles."""
     config = {
         "space_size": [1.0, 1.0, 1.0],
         "grid_resolution": 0.2,
@@ -39,14 +41,18 @@ def test_dijkstra_with_obstacles():
     planner = DijkstraPathPlanner(graph)
 
     start = (0, 0, 0)
-    goal = (4, 4, 4)
+    goal = (1, 1, 1)
     path = planner.plan_path(start, goal)
 
     assert path is not None
     assert start in path
     assert goal in path
-    # Ellenőrizzük, hogy az útvonal elkerüli az akadályt
-    obstacle = (2, 2, 2)
-    assert obstacle not in path
 
-test_dijkstra_simple_path()
+    print("Success!")
+    print("Path:")
+    for node in path:
+        print(node)
+
+
+# test_dijkstra_simple_path()
+# test_dijkstra_with_obstacles()

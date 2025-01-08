@@ -21,9 +21,6 @@ class DijkstraPathPlanner:
         while priority_queue:
             current_distance, current_node = heapq.heappop(priority_queue)
 
-            print(f"Current node: {current_node}, Distance: {current_distance}")
-            print(f"Neighbors of {current_node}: {self.graph.edges[current_node]}")
-
             if current_node == goal:
                 return self.reconstruct_path(came_from, current_node)
 
@@ -37,8 +34,8 @@ class DijkstraPathPlanner:
 
         return None
 
-
-    def reconstruct_path(self, came_from, current):
+    @staticmethod
+    def reconstruct_path(came_from, current):
         """Reconstruct path from goal to start position."""
         path = [current]
         while current in came_from:
