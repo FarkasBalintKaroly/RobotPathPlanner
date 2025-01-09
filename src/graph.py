@@ -58,7 +58,7 @@ class Graph:
             (node1[0] - node2[0])**2 +
             (node1[1] - node2[1])**2 +
             (node1[2] - node2[2])**2
-        ))
+        ), 5)
 
     def _get_neighbors(self, node):
         """Get all potential neighbors of a node in 3D space."""
@@ -90,3 +90,10 @@ class Graph:
         """Print the graph structure."""
         for node, connections in self.edges.items():
             print(f"Node {node}: {connections}")
+
+    def export_to_dict(self):
+        """Export graph structure to a dictionary."""
+        return {
+            "nodes": list(self.nodes),
+            "edges": {str(node): connections for node, connections in self.edges.items()}
+        }
