@@ -3,12 +3,15 @@ import json
 
 class ConfigLoader:
 
+    def __init__(self):
+        self.config = None
+
     def load_config(self, file_path):
         """Load and validate JSON config file."""
         with open(file_path, 'r') as file:
-            config = json.load(file)
-        self.validate_config(config)
-        return config
+            self.config = json.load(file)
+        self.validate_config(self.config)
+        return self.config
 
     @staticmethod
     def validate_config(config):
