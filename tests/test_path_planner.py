@@ -1,5 +1,6 @@
 from src.graph import Graph
 from src.path_planner.dijkstra import DijkstraPathPlanner
+from src.visualizer import Visualizer2D, Visualizer3D
 
 
 def test_dijkstra_simple_path():
