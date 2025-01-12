@@ -1,22 +1,36 @@
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
 
 class Visualizer:
+    """
+    Base visualizer class for plotting graphs and paths in 2D and 3D.
+
+    Attributes:
+        graph (Graph): The graph object containing nodes, edges, and obstacles.
+        path (list): The planned path as a list of nodes.
+    """
+
     def __init__(self, graph, path):
         """
-        Basic visualizer class.
-        :param graph: Graph object.
-        :param path: Path.
+        Initialize the Visualizer with a graph and path.
+
+        Args:
+            graph (Graph): The graph object.
+            path (list): The planned path as a list of nodes.
         """
         self.graph = graph
         self.path = path
 
     def _plot_obstacles_2d(self, ax, plane):
         """
-        Plot obstacles in 2D.
-        :param ax: Matplotlib axis.
-        :param plane: Plane axis (e.g. ('x', 'y')).
+        Plot obstacles in 2D for the given plane.
+
+        Args:
+            ax (matplotlib.axes.Axes): The Matplotlib axis object.
+            plane (tuple): The plane to plot ('x', 'y') or ('y', 'z').
+
+        Raises:
+            ValueError: If the specified plane is not supported.
         """
         for obstacle in self.graph.obstacles:
             if plane == ('x', 'y'):
@@ -33,7 +47,9 @@ class Visualizer:
     def _plot_obstacles_3d(self, ax):
         """
         Plot obstacles in 3D.
-        :param ax: Matplotlib 3D axis.
+
+        Args:
+            ax (matplotlib.axes._subplots.Axes3DSubplot): The Matplotlib 3D axis object.
         """
         for obstacle in self.graph.obstacles:
             x = [obstacle['start'][0], obstacle['end'][0]]
@@ -43,9 +59,16 @@ class Visualizer:
 
 
 class Visualizer2D(Visualizer):
+    """
+    2D visualizer for creating top-view and side-view plots.
+
+    Inherits from:
+        Visualizer
+    """
+
     def plot(self):
         """
-        Creating 2 2D plot (top view and side view).
+        Plot the graph and path in 2D (top view and side view).
         """
         nodes = list(self.graph.nodes)
         edges = self.graph.edges
@@ -84,9 +107,16 @@ class Visualizer2D(Visualizer):
 
 
 class Visualizer3D(Visualizer):
+    """
+    3D visualizer for creating a 3D plot of the graph and path.
+
+    Inherits from:
+        Visualizer
+    """
+
     def plot(self):
         """
-        Creating 3D plot.
+        Plot the graph and path in 3D.
         """
         fig = plt.figure(figsize=(10, 7))
         ax = fig.add_subplot(111, projection='3d')
