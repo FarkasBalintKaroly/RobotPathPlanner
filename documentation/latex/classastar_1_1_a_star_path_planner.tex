@@ -1,0 +1,52 @@
+\doxysection{astar.\+AStar\+Path\+Planner Class Reference}
+\hypertarget{classastar_1_1_a_star_path_planner}{}\label{classastar_1_1_a_star_path_planner}\index{astar.AStarPathPlanner@{astar.AStarPathPlanner}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classastar_1_1_a_star_path_planner_a9e583f763e2f4f1f18fdeb75c06b6989}\label{classastar_1_1_a_star_path_planner_a9e583f763e2f4f1f18fdeb75c06b6989} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, graph)
+\item 
+\mbox{\hyperlink{classastar_1_1_a_star_path_planner_a8f309e9af3513a5127ca07504cca7bcc}{plan\+\_\+path}} (self, start, goal)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classastar_1_1_a_star_path_planner_a4502d9683cedf23114545a16e9caea61}{heuristic}} (node, goal)
+\item 
+\mbox{\hyperlink{classastar_1_1_a_star_path_planner_a7ecc558cc1e6281f78ff7fcddc0167bb}{reconstruct\+\_\+path}} (came\+\_\+from, current)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classastar_1_1_a_star_path_planner_a4fecff3538e38503b25763982e6a0c4a}\label{classastar_1_1_a_star_path_planner_a4fecff3538e38503b25763982e6a0c4a} 
+{\bfseries graph} = graph
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classastar_1_1_a_star_path_planner_a4502d9683cedf23114545a16e9caea61}\index{astar.AStarPathPlanner@{astar.AStarPathPlanner}!heuristic@{heuristic}}
+\index{heuristic@{heuristic}!astar.AStarPathPlanner@{astar.AStarPathPlanner}}
+\doxysubsubsection{\texorpdfstring{heuristic()}{heuristic()}}
+{\footnotesize\ttfamily \label{classastar_1_1_a_star_path_planner_a4502d9683cedf23114545a16e9caea61} 
+astar.\+AStar\+Path\+Planner.\+heuristic (\begin{DoxyParamCaption}\item[{}]{node}{, }\item[{}]{goal}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Calculate Euclidean distance for heuristic.\end{DoxyVerb}
+ \Hypertarget{classastar_1_1_a_star_path_planner_a8f309e9af3513a5127ca07504cca7bcc}\index{astar.AStarPathPlanner@{astar.AStarPathPlanner}!plan\_path@{plan\_path}}
+\index{plan\_path@{plan\_path}!astar.AStarPathPlanner@{astar.AStarPathPlanner}}
+\doxysubsubsection{\texorpdfstring{plan\_path()}{plan\_path()}}
+{\footnotesize\ttfamily \label{classastar_1_1_a_star_path_planner_a8f309e9af3513a5127ca07504cca7bcc} 
+astar.\+AStar\+Path\+Planner.\+plan\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{start}{, }\item[{}]{goal}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A* algorithm for optimal path.\end{DoxyVerb}
+ \Hypertarget{classastar_1_1_a_star_path_planner_a7ecc558cc1e6281f78ff7fcddc0167bb}\index{astar.AStarPathPlanner@{astar.AStarPathPlanner}!reconstruct\_path@{reconstruct\_path}}
+\index{reconstruct\_path@{reconstruct\_path}!astar.AStarPathPlanner@{astar.AStarPathPlanner}}
+\doxysubsubsection{\texorpdfstring{reconstruct\_path()}{reconstruct\_path()}}
+{\footnotesize\ttfamily \label{classastar_1_1_a_star_path_planner_a7ecc558cc1e6281f78ff7fcddc0167bb} 
+astar.\+AStar\+Path\+Planner.\+reconstruct\+\_\+path (\begin{DoxyParamCaption}\item[{}]{came\+\_\+from}{, }\item[{}]{current}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Reconstruct path from goal to start point.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/path\+\_\+planner/astar.\+py\end{DoxyCompactItemize}

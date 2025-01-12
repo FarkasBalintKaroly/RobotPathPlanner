@@ -1,0 +1,87 @@
+\doxysection{config\+\_\+loader.\+Config\+Loader Class Reference}
+\hypertarget{classconfig__loader_1_1_config_loader}{}\label{classconfig__loader_1_1_config_loader}\index{config\_loader.ConfigLoader@{config\_loader.ConfigLoader}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classconfig__loader_1_1_config_loader_a079ac765e0486382427b4a5f0adba62b}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classconfig__loader_1_1_config_loader_af9b7768bb50b5c140322b93437ec775d}{load\+\_\+config}} (self, file\+\_\+path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classconfig__loader_1_1_config_loader_a937f974fcca32c84102780ae86edd8b6}{validate\+\_\+config}} (config)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classconfig__loader_1_1_config_loader_a181b5b17691405ddb39eaf2bb795db43}\label{classconfig__loader_1_1_config_loader_a181b5b17691405ddb39eaf2bb795db43} 
+{\bfseries config} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class to load and validate a JSON configuration file for a 3D path planner.
+
+Attributes:
+    config (dict): The loaded configuration file as a dictionary.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classconfig__loader_1_1_config_loader_a079ac765e0486382427b4a5f0adba62b}\index{config\_loader.ConfigLoader@{config\_loader.ConfigLoader}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!config\_loader.ConfigLoader@{config\_loader.ConfigLoader}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classconfig__loader_1_1_config_loader_a079ac765e0486382427b4a5f0adba62b} 
+config\+\_\+loader.\+Config\+Loader.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the ConfigLoader with no configuration loaded.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classconfig__loader_1_1_config_loader_af9b7768bb50b5c140322b93437ec775d}\index{config\_loader.ConfigLoader@{config\_loader.ConfigLoader}!load\_config@{load\_config}}
+\index{load\_config@{load\_config}!config\_loader.ConfigLoader@{config\_loader.ConfigLoader}}
+\doxysubsubsection{\texorpdfstring{load\_config()}{load\_config()}}
+{\footnotesize\ttfamily \label{classconfig__loader_1_1_config_loader_af9b7768bb50b5c140322b93437ec775d} 
+config\+\_\+loader.\+Config\+Loader.\+load\+\_\+config (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load and validate a JSON config file.
+
+Args:
+    file_path (str): The path to the configuration file.
+
+Returns:
+    dict: The validated configuration.
+
+Raises:
+    FileNotFoundError: If the configuration file does not exist.
+    ValueError: If the file is not valid JSON or the configuration is invalid.
+\end{DoxyVerb}
+ \Hypertarget{classconfig__loader_1_1_config_loader_a937f974fcca32c84102780ae86edd8b6}\index{config\_loader.ConfigLoader@{config\_loader.ConfigLoader}!validate\_config@{validate\_config}}
+\index{validate\_config@{validate\_config}!config\_loader.ConfigLoader@{config\_loader.ConfigLoader}}
+\doxysubsubsection{\texorpdfstring{validate\_config()}{validate\_config()}}
+{\footnotesize\ttfamily \label{classconfig__loader_1_1_config_loader_a937f974fcca32c84102780ae86edd8b6} 
+config\+\_\+loader.\+Config\+Loader.\+validate\+\_\+config (\begin{DoxyParamCaption}\item[{}]{config}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Validate the contents of a configuration file.
+
+Args:
+    config (dict): The configuration dictionary.
+
+Raises:
+    ValueError: If any validation check fails.
+
+Validation Checks:
+    - Required keys must be present.
+    - `space_size` must be a list of 3 positive numbers.
+    - `grid_resolution` must be a positive number.
+    - `obstacles` must be a list of valid obstacle dictionaries.
+    - `start_point` must be a list of 3 numeric values.
+    - `goal_point` must be a list of 3 numeric values.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/config\+\_\+loader.\+py\end{DoxyCompactItemize}

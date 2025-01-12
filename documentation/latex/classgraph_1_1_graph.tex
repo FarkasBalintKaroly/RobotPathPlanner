@@ -1,0 +1,179 @@
+\doxysection{graph.\+Graph Class Reference}
+\hypertarget{classgraph_1_1_graph}{}\label{classgraph_1_1_graph}\index{graph.Graph@{graph.Graph}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_a8f27e162f4afeb6328e5ac9a2f3f755e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, config)
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_a7b675d874d9e077070cf08412b6172a0}{print\+\_\+graph}} (self)
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_a549b308da352b0aad4441d7e3e06cbd7}{export\+\_\+to\+\_\+dict}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classgraph_1_1_graph_a3f0fef5ba2766309491a013c57a687c2}\label{classgraph_1_1_graph_a3f0fef5ba2766309491a013c57a687c2} 
+{\bfseries space\+\_\+size} = config\mbox{[}\textquotesingle{}space\+\_\+size\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{classgraph_1_1_graph_a57dbe618a2f45c78c10bf9e8911b7bed}\label{classgraph_1_1_graph_a57dbe618a2f45c78c10bf9e8911b7bed} 
+{\bfseries grid\+\_\+resolution} = config\mbox{[}\textquotesingle{}grid\+\_\+resolution\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{classgraph_1_1_graph_aaf2c54b4fefc1b523dc592f75c2ccf1d}\label{classgraph_1_1_graph_aaf2c54b4fefc1b523dc592f75c2ccf1d} 
+{\bfseries obstacles} = config\mbox{[}\textquotesingle{}obstacles\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{classgraph_1_1_graph_a9345db927ab60576173ca2beacedcec3}\label{classgraph_1_1_graph_a9345db927ab60576173ca2beacedcec3} 
+{\bfseries nodes} = set()
+\item 
+\Hypertarget{classgraph_1_1_graph_ab1010cf0fa449e9bca99f4ab063fe3c4}\label{classgraph_1_1_graph_ab1010cf0fa449e9bca99f4ab063fe3c4} 
+{\bfseries edges} = defaultdict(list)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_a7bc29e9f27edd0ef56bb77b69e7bd006}{\+\_\+create\+\_\+grid}} (self)
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_a8261cc938db87ff5e3749a99cea245c1}{\+\_\+remove\+\_\+obstacle\+\_\+nodes}} (self)
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_a9e96260420f4a22db6419565c655d722}{\+\_\+connect\+\_\+nodes}} (self)
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_a33dd310f79530041deabe1eb4c06176c}{\+\_\+get\+\_\+neighbors}} (self, node)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_a5240f5e438a10ec51a8491f47a2c95a9}{\+\_\+calculate\+\_\+distance}} (node1, node2)
+\item 
+\mbox{\hyperlink{classgraph_1_1_graph_acf1c62b3e60fe6c1ae8cf9dbc72ddb3b}{\+\_\+is\+\_\+adjacent}} (node, neighbor)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Represents a 3D grid graph with nodes and edges.
+
+This class generates a 3D grid based on the given configuration, removes nodes
+that fall within obstacles, and connects nodes to their neighbors.
+
+Attributes:
+    space_size (list): The dimensions of the 3D space [x, y, z].
+    grid_resolution (float): The distance between adjacent nodes in the grid.
+    obstacles (list): A list of obstacles, each defined by 'start' and 'end' coordinates.
+    nodes (set): A set of all valid nodes in the graph.
+    edges (dict): A dictionary mapping each node to its connected neighbors and weights.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgraph_1_1_graph_a8f27e162f4afeb6328e5ac9a2f3f755e}\index{graph.Graph@{graph.Graph}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_a8f27e162f4afeb6328e5ac9a2f3f755e} 
+graph.\+Graph.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{config}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the graph with the given configuration.
+
+Args:
+    config (dict): Configuration containing 'space_size', 'grid_resolution', and 'obstacles'.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgraph_1_1_graph_a5240f5e438a10ec51a8491f47a2c95a9}\index{graph.Graph@{graph.Graph}!\_calculate\_distance@{\_calculate\_distance}}
+\index{\_calculate\_distance@{\_calculate\_distance}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_distance()}{\_calculate\_distance()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_a5240f5e438a10ec51a8491f47a2c95a9} 
+graph.\+Graph.\+\_\+calculate\+\_\+distance (\begin{DoxyParamCaption}\item[{}]{node1}{, }\item[{}]{node2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\begin{DoxyVerb}Calculate the Euclidean distance between two nodes.
+
+Args:
+    node1 (tuple): The first node coordinates (x, y, z).
+    node2 (tuple): The second node coordinates (x, y, z).
+
+Returns:
+    float: The Euclidean distance between the two nodes.
+\end{DoxyVerb}
+ \Hypertarget{classgraph_1_1_graph_a9e96260420f4a22db6419565c655d722}\index{graph.Graph@{graph.Graph}!\_connect\_nodes@{\_connect\_nodes}}
+\index{\_connect\_nodes@{\_connect\_nodes}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{\_connect\_nodes()}{\_connect\_nodes()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_a9e96260420f4a22db6419565c655d722} 
+graph.\+Graph.\+\_\+connect\+\_\+nodes (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Connect neighboring nodes.
+
+Establish edges between nodes and their neighbors with the calculated weights.
+\end{DoxyVerb}
+ \Hypertarget{classgraph_1_1_graph_a7bc29e9f27edd0ef56bb77b69e7bd006}\index{graph.Graph@{graph.Graph}!\_create\_grid@{\_create\_grid}}
+\index{\_create\_grid@{\_create\_grid}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{\_create\_grid()}{\_create\_grid()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_a7bc29e9f27edd0ef56bb77b69e7bd006} 
+graph.\+Graph.\+\_\+create\+\_\+grid (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Create grid nodes in 3D space.
+
+Generates a grid of nodes within the defined space size and resolution.
+\end{DoxyVerb}
+ \Hypertarget{classgraph_1_1_graph_a33dd310f79530041deabe1eb4c06176c}\index{graph.Graph@{graph.Graph}!\_get\_neighbors@{\_get\_neighbors}}
+\index{\_get\_neighbors@{\_get\_neighbors}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{\_get\_neighbors()}{\_get\_neighbors()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_a33dd310f79530041deabe1eb4c06176c} 
+graph.\+Graph.\+\_\+get\+\_\+neighbors (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Get all potential neighbors of a node in 3D space.
+
+Args:
+    node (tuple): The coordinates of the current node (x, y, z).
+
+Returns:
+    list: A list of potential neighbor nodes.
+\end{DoxyVerb}
+ \Hypertarget{classgraph_1_1_graph_acf1c62b3e60fe6c1ae8cf9dbc72ddb3b}\index{graph.Graph@{graph.Graph}!\_is\_adjacent@{\_is\_adjacent}}
+\index{\_is\_adjacent@{\_is\_adjacent}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{\_is\_adjacent()}{\_is\_adjacent()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_acf1c62b3e60fe6c1ae8cf9dbc72ddb3b} 
+graph.\+Graph.\+\_\+is\+\_\+adjacent (\begin{DoxyParamCaption}\item[{}]{node}{, }\item[{}]{neighbor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\begin{DoxyVerb}Check if two nodes are adjacent (not diagonal).
+
+Args:
+    node (tuple): The first node coordinates (x, y, z).
+    neighbor (tuple): The second node coordinates (x, y, z).
+
+Returns:
+    bool: True if the nodes are adjacent, False otherwise.
+\end{DoxyVerb}
+ \Hypertarget{classgraph_1_1_graph_a8261cc938db87ff5e3749a99cea245c1}\index{graph.Graph@{graph.Graph}!\_remove\_obstacle\_nodes@{\_remove\_obstacle\_nodes}}
+\index{\_remove\_obstacle\_nodes@{\_remove\_obstacle\_nodes}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{\_remove\_obstacle\_nodes()}{\_remove\_obstacle\_nodes()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_a8261cc938db87ff5e3749a99cea245c1} 
+graph.\+Graph.\+\_\+remove\+\_\+obstacle\+\_\+nodes (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Remove nodes that fall within obstacles.
+
+Nodes that are within any defined obstacle range will be excluded from the graph.
+\end{DoxyVerb}
+ \Hypertarget{classgraph_1_1_graph_a549b308da352b0aad4441d7e3e06cbd7}\index{graph.Graph@{graph.Graph}!export\_to\_dict@{export\_to\_dict}}
+\index{export\_to\_dict@{export\_to\_dict}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{export\_to\_dict()}{export\_to\_dict()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_a549b308da352b0aad4441d7e3e06cbd7} 
+graph.\+Graph.\+export\+\_\+to\+\_\+dict (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Export the graph structure to a dictionary.
+
+Returns:
+    dict: A dictionary representation of the graph with nodes and edges.
+\end{DoxyVerb}
+ \Hypertarget{classgraph_1_1_graph_a7b675d874d9e077070cf08412b6172a0}\index{graph.Graph@{graph.Graph}!print\_graph@{print\_graph}}
+\index{print\_graph@{print\_graph}!graph.Graph@{graph.Graph}}
+\doxysubsubsection{\texorpdfstring{print\_graph()}{print\_graph()}}
+{\footnotesize\ttfamily \label{classgraph_1_1_graph_a7b675d874d9e077070cf08412b6172a0} 
+graph.\+Graph.\+print\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Print the graph structure.
+
+Prints each node and its connected neighbors with weights.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/graph.\+py\end{DoxyCompactItemize}

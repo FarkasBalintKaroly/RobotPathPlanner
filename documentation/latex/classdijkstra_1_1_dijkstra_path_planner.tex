@@ -1,0 +1,93 @@
+\doxysection{dijkstra.\+Dijkstra\+Path\+Planner Class Reference}
+\hypertarget{classdijkstra_1_1_dijkstra_path_planner}{}\label{classdijkstra_1_1_dijkstra_path_planner}\index{dijkstra.DijkstraPathPlanner@{dijkstra.DijkstraPathPlanner}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdijkstra_1_1_dijkstra_path_planner_a66a44df549ad4c636329bd1e29cd9af7}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, graph)
+\item 
+\mbox{\hyperlink{classdijkstra_1_1_dijkstra_path_planner_a4b42bf60ead7d3271ff865cd18fa4aee}{plan\+\_\+path}} (self, start, goal)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdijkstra_1_1_dijkstra_path_planner_a1f7601f43efe2d0c4385062cc58a7675}{reconstruct\+\_\+path}} (came\+\_\+from, current)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classdijkstra_1_1_dijkstra_path_planner_adb832aac03b153cbf471289fa5ee54d6}\label{classdijkstra_1_1_dijkstra_path_planner_adb832aac03b153cbf471289fa5ee54d6} 
+{\bfseries graph} = graph
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Implements the Dijkstra algorithm for shortest path planning in a graph.
+
+This class finds the shortest path between a start node and a goal node
+in a given graph using Dijkstra's algorithm.
+
+Attributes:
+    graph (Graph): The graph on which the path planning is performed.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdijkstra_1_1_dijkstra_path_planner_a66a44df549ad4c636329bd1e29cd9af7}\index{dijkstra.DijkstraPathPlanner@{dijkstra.DijkstraPathPlanner}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!dijkstra.DijkstraPathPlanner@{dijkstra.DijkstraPathPlanner}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classdijkstra_1_1_dijkstra_path_planner_a66a44df549ad4c636329bd1e29cd9af7} 
+dijkstra.\+Dijkstra\+Path\+Planner.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{graph}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the DijkstraPathPlanner with a graph.
+
+Args:
+    graph (Graph): The graph object containing nodes and edges.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdijkstra_1_1_dijkstra_path_planner_a4b42bf60ead7d3271ff865cd18fa4aee}\index{dijkstra.DijkstraPathPlanner@{dijkstra.DijkstraPathPlanner}!plan\_path@{plan\_path}}
+\index{plan\_path@{plan\_path}!dijkstra.DijkstraPathPlanner@{dijkstra.DijkstraPathPlanner}}
+\doxysubsubsection{\texorpdfstring{plan\_path()}{plan\_path()}}
+{\footnotesize\ttfamily \label{classdijkstra_1_1_dijkstra_path_planner_a4b42bf60ead7d3271ff865cd18fa4aee} 
+dijkstra.\+Dijkstra\+Path\+Planner.\+plan\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{start}{, }\item[{}]{goal}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Plan the shortest path from start to goal using Dijkstra's algorithm.
+
+Args:
+    start (tuple): The starting node's coordinates (x, y, z).
+    goal (tuple): The goal node's coordinates (x, y, z).
+
+Returns:
+    list: The shortest path as a list of nodes from start to goal.
+    None: If no path exists between the start and goal nodes.
+
+Raises:
+    ValueError: If the start or goal node is not in the graph.
+
+Algorithm:
+    - Initialize distances for all nodes as infinity, except the start node (distance 0).
+    - Use a priority queue to explore the graph in order of increasing distance.
+    - Update distances and track the path to each node using a `came_from` dictionary.
+    - Stop when the goal node is reached, and reconstruct the path.
+\end{DoxyVerb}
+ \Hypertarget{classdijkstra_1_1_dijkstra_path_planner_a1f7601f43efe2d0c4385062cc58a7675}\index{dijkstra.DijkstraPathPlanner@{dijkstra.DijkstraPathPlanner}!reconstruct\_path@{reconstruct\_path}}
+\index{reconstruct\_path@{reconstruct\_path}!dijkstra.DijkstraPathPlanner@{dijkstra.DijkstraPathPlanner}}
+\doxysubsubsection{\texorpdfstring{reconstruct\_path()}{reconstruct\_path()}}
+{\footnotesize\ttfamily \label{classdijkstra_1_1_dijkstra_path_planner_a1f7601f43efe2d0c4385062cc58a7675} 
+dijkstra.\+Dijkstra\+Path\+Planner.\+reconstruct\+\_\+path (\begin{DoxyParamCaption}\item[{}]{came\+\_\+from}{, }\item[{}]{current}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Reconstruct the path from the goal node to the start node.
+
+Args:
+    came_from (dict): A dictionary mapping each node to its predecessor.
+    current (tuple): The goal node coordinates.
+
+Returns:
+    list: The reconstructed path as a list of nodes from start to goal.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/path\+\_\+planner/dijkstra.\+py\end{DoxyCompactItemize}

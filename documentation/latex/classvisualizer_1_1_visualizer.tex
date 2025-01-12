@@ -1,0 +1,87 @@
+\doxysection{visualizer.\+Visualizer Class Reference}
+\hypertarget{classvisualizer_1_1_visualizer}{}\label{classvisualizer_1_1_visualizer}\index{visualizer.Visualizer@{visualizer.Visualizer}}
+Inheritance diagram for visualizer.\+Visualizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classvisualizer_1_1_visualizer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvisualizer_1_1_visualizer_a8bcb3cf592a5989ca51f1e40d6524ea6}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, graph, path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classvisualizer_1_1_visualizer_ab69219941f163662ccfc74a5a62ce2e9}\label{classvisualizer_1_1_visualizer_ab69219941f163662ccfc74a5a62ce2e9} 
+{\bfseries graph} = graph
+\item 
+\Hypertarget{classvisualizer_1_1_visualizer_a8ed041a67fef5035b4ba999122e96389}\label{classvisualizer_1_1_visualizer_a8ed041a67fef5035b4ba999122e96389} 
+{\bfseries path} = path
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvisualizer_1_1_visualizer_a6c77c3e5f8e67738f047430b64832d1c}{\+\_\+plot\+\_\+obstacles\+\_\+2d}} (self, ax, plane)
+\item 
+\mbox{\hyperlink{classvisualizer_1_1_visualizer_adb7828c92773967f9628fb5d11dbb721}{\+\_\+plot\+\_\+obstacles\+\_\+3d}} (self, ax)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Base visualizer class for plotting graphs and paths in 2D and 3D.
+
+Attributes:
+    graph (Graph): The graph object containing nodes, edges, and obstacles.
+    path (list): The planned path as a list of nodes.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classvisualizer_1_1_visualizer_a8bcb3cf592a5989ca51f1e40d6524ea6}\index{visualizer.Visualizer@{visualizer.Visualizer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!visualizer.Visualizer@{visualizer.Visualizer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classvisualizer_1_1_visualizer_a8bcb3cf592a5989ca51f1e40d6524ea6} 
+visualizer.\+Visualizer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{graph}{, }\item[{}]{path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the Visualizer with a graph and path.
+
+Args:
+    graph (Graph): The graph object.
+    path (list): The planned path as a list of nodes.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classvisualizer_1_1_visualizer_a6c77c3e5f8e67738f047430b64832d1c}\index{visualizer.Visualizer@{visualizer.Visualizer}!\_plot\_obstacles\_2d@{\_plot\_obstacles\_2d}}
+\index{\_plot\_obstacles\_2d@{\_plot\_obstacles\_2d}!visualizer.Visualizer@{visualizer.Visualizer}}
+\doxysubsubsection{\texorpdfstring{\_plot\_obstacles\_2d()}{\_plot\_obstacles\_2d()}}
+{\footnotesize\ttfamily \label{classvisualizer_1_1_visualizer_a6c77c3e5f8e67738f047430b64832d1c} 
+visualizer.\+Visualizer.\+\_\+plot\+\_\+obstacles\+\_\+2d (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{ax}{, }\item[{}]{plane}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Plot obstacles in 2D for the given plane.
+
+Args:
+    ax (matplotlib.axes.Axes): The Matplotlib axis object.
+    plane (tuple): The plane to plot ('x', 'y') or ('y', 'z').
+
+Raises:
+    ValueError: If the specified plane is not supported.
+\end{DoxyVerb}
+ \Hypertarget{classvisualizer_1_1_visualizer_adb7828c92773967f9628fb5d11dbb721}\index{visualizer.Visualizer@{visualizer.Visualizer}!\_plot\_obstacles\_3d@{\_plot\_obstacles\_3d}}
+\index{\_plot\_obstacles\_3d@{\_plot\_obstacles\_3d}!visualizer.Visualizer@{visualizer.Visualizer}}
+\doxysubsubsection{\texorpdfstring{\_plot\_obstacles\_3d()}{\_plot\_obstacles\_3d()}}
+{\footnotesize\ttfamily \label{classvisualizer_1_1_visualizer_adb7828c92773967f9628fb5d11dbb721} 
+visualizer.\+Visualizer.\+\_\+plot\+\_\+obstacles\+\_\+3d (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{ax}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Plot obstacles in 3D.
+
+Args:
+    ax (matplotlib.axes._subplots.Axes3DSubplot): The Matplotlib 3D axis object.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/visualizer.\+py\end{DoxyCompactItemize}
